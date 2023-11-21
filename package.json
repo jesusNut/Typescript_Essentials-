@@ -1,0 +1,11 @@
+{
+  "name": "typescriptessentials",
+  "version": "1.0.0",
+  "description": "all important concepts of typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "abhishek jesusnut",
+  "license": "ISC"
+}
