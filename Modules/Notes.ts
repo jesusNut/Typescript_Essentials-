@@ -41,3 +41,17 @@
 /**================================================================
 **   ☠️☠️ Named Import vs default import (Same concept as JS)☠️☠️
 *================================================================**/
+
+
+/**================================================================
+**   ☠️☠️ Concept of using an index file (used in Playwright)☠️☠️
+*================================================================**/
+
+//? https://medium.com/@bobjunior542/maximize-typescript-productivity-use-the-index-file-now-cac2f4f4d1ed
+
+/**================================================================
+**   ☠️☠️ When to use {} while importing and when not to use ☠️☠️
+*================================================================**/
+
+//? https://www.geeksforgeeks.org/when-should-we-use-curly-braces-for-es6-import/
+//? https://stackoverflow.com/questions/36795819/when-should-i-use-curly-braces-for-es6-import
