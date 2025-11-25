@@ -6,8 +6,48 @@
 //* the function's name, parameters and return types. It defines the structure and return-type of a function
 //* without including function's implementation or body.
 
-//! 🤩🤩🤩 VERY VERY IMPORTANT POINT 🤩🤩🤩 :
-//! Function call signatures are typically used inside object type notations
+//=====================================================================
+//! Ways to Define Function Call Signatures:
+//=====================================================================
+
+//!. 1 Type Aliases/ Function type expressions: [Learnt Earlier]
+
+type MyFunction = (param1: string, param2: number) => boolean;
+
+const myFunction: MyFunction = (str, num) => {
+  return str.length > num;
+};
+
+console.log(myFunction("hello", 3)); // Output: true
+
+//!. 2 Interfaces:
+
+interface MyFunctionInterface {
+  (param1: string, param2: number): boolean;
+}
+
+const myFunction2: MyFunctionInterface = (str, num) => {
+  return str.length > num;
+};
+
+console.log(myFunction2("world", 5)); // Output: false
+
+//!. 3  Inline Type Annotations
+
+const myFunction3: (param1: string, param2: number) => boolean = (str, num) => {
+  return str.length > num;
+};
+
+console.log(myFunction3("test", 2)); // Output: true
+
+//!. 4 Traditional Way
+
+function myFunction4(a: number, b: number): number {
+  return a + b;
+}
+
+//!. 5 🤩🤩🤩 VERY VERY IMPORTANT POINT 🤩🤩🤩 :
+//! Function call signatures can be used inside object type notations.
 //! i.e. for object methods to define the structure and return type of functions within objects (called Object Methods in JS)
 
 //defining type of an object ******************************************
@@ -52,7 +92,6 @@ console.log(abhishek.greet("Please give fee !"));
 console.log(`Please pay : Rs. ${abhishek.fee(true)}`);
 console.log(`Please pay : Rs. ${abhishek.fee(false)}`);
 
-//! *** 🦉🦉 MOST CONFUSING 3rd WAY of writing Call signtaures 🦉🦉***
 
 //? https://www.youtube.com/watch?v=cA7Pqw72LAQ&list=PLwGdqUZWnOp0xfHQFmlL52b_6-QZ0mnk_&index=15
 

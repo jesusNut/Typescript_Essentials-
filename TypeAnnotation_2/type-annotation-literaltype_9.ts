@@ -13,7 +13,7 @@ let ldata: number | string = "999";
 ldata = 999;
 ldata = 777;
 
-//in the abobe example, user can assign any nuber or string to variable ldata.
+//in the abobe example, user can assign any number or string to variable ldata.
 
 //* I want to create a variable which should hold either a number 999
 //*  or a string '999' ONLY.

@@ -7,7 +7,7 @@
 //! Difference 1: ^^^^^^^^^^^^^^^ WHERE TO USE? ^^^^^^^^^^^^^^^^^^^^^
 
 //! Interfaces can be used TO DEFINE OBJECTS ONLY,
-//! WHILE Type/Type Alias can be used to define- primitives, union, intersection, object etc.
+//! WHILE Type/Type Alias can be used to define- primitives, and object both.
 
 interface day {
   weekday: string;

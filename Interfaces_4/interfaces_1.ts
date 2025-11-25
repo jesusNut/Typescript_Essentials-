@@ -7,7 +7,8 @@
 
 //! An interface is a syntactical contract (blueprint) that an entity should adhere to.
 
-//! 😆😆😆 Interfaces can be used to define blueprints of OBJECTS ONLY. 😆😆😆
+//! 😆😆😆 Interfaces can be used to define blueprints of OBJECTS & FUNCTIONS ONLY. 😆😆😆
+//! 😆😆😆 Interfaces in TypeScript cannot be used for primitive types like string, number, or boolean.😆😆😆
 
 //Interfaces define properties & methods which are the members of the interface.
 //Interfaces contain only the declaration of the members. It is the responsibility of the
@@ -24,7 +25,7 @@ interface Iperson {
   lname: string;
   age: number;
   salary: string | number;
-  getBasicDetails: (greetings: string) => string; //this is function call signature - way
+  getBasicDetails: (greetings: string) => string; //this is function call signature - way 1
   coronaSalary(percentage: number): number; //this is function call signature - way 2
 }
 
@@ -56,6 +57,18 @@ console.log(myObject.getBasicDetails("Hi cutie.."));
 console.log(
   `From now onwards your salary in corona will be ${myObject.coronaSalary(0.5)}`
 );
+
+//* 😁😁😁 Defining a function 'f11' which will adhere to interface F11
+
+interface F11 {
+  (greet: string): string;
+}
+
+let f11: F11 = (greet) => {
+  return `${greet} your majesty !!!`;
+};
+
+console.log(f11("Hello"));
 
 //* 😁😁😁 Defining an interface having optional properties and methods :
 
@@ -106,7 +119,7 @@ interface IPlaneList {
   fleetsize: number;
 }
 
-const delta : IPlaneList = {
+const delta: IPlaneList = {
   fname: "delta_Airlines",
   headquarters: "Indiana",
   fleetsize: 100,
@@ -127,7 +140,6 @@ console.log("🚀 ~ planeHolder:", planeHolder);
 
 //* 😁😁😁 Defining an interface for Array of objects
 
-
 interface ITankList {
   tankname: string;
   country: string;
@@ -145,15 +157,14 @@ const tankData: ITankList[] = [
 
 console.log(tankData.length);
 
-
-
 /**================================================================================================
- * ?    SUMMARY (Just like Type annotation/alias with objects)
+ * ?    SUMMARY (Just like Type alias with objects)
  * ?-------------------------------------------------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
  *
  * ! 1. All the properties should be present in the object as per the Interface defined.
  * ! 2. All the properties should have exact name & type as defined in Interface.
  * ! 3. Cannot add a new property which is not already defined in Interface.
- * ! 4. Order of proprties does not matter until all properties are defined
+ * ! 4. Cannot delete a property externally which is not optional.
+ * ! 5. Order of proprties does not matter until all properties are defined
  * !    as per the Interface with correct data types.
  *================================================================================================**/

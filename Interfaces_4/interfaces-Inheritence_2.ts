@@ -2,7 +2,7 @@
  **    ☠️☠️ INTERFACES - INHERITENCE ☠️☠️
  *======================================**/
 
-//! Concept 1: One Interface can extend one or more interfaces using extends keyword.
+//! Concept 1: One Interface can extend one or more interfaces using extends keywor simultaneously.
 
 //* way -1
 

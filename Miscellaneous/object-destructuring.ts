@@ -25,7 +25,7 @@ let socks: innerObject = {
 // const { hasHoles, size, fname }: innerObject = socks;
 // console.log(`Article : ${fname}--${size}--${hasHoles}`);
 
-//todo :: 'name of the variable in destructuring array' SHOULD BE SAME AS 'key in object'
+//todo :: 'name of the variable in destructuring object' SHOULD BE SAME AS 'key in object'
 
 //! destructure and use it in a function as params.
 

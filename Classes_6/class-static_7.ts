@@ -71,13 +71,11 @@ const myObj = new ClassWithStaticFields();
 //* WAY 1: 😵😵 USING this keyword.😵😵
 
 
-
-
 class StaticMethodCall {
   static staticProperty = "static property";
   age: number = 22;
 
-  //! USE this Keyword  to call a static method or property within another static method of the same class.
+  //! USE this Keyword  to call a static method or static property within another static method of the same class.
 
   //! this refers to CLASS itself when used inside a static method. [not like JAVA where usage of this and super is not allowed in static context]
   //! this refers to the - object calling the instance method in case of instance methods. [same like java]
@@ -102,7 +100,7 @@ console.log(StaticMethodCall.anotherStaticMethod());
 
 
 
-//* WAY 2: 🤩🤩 USING this keyword.🤩🤩
+//* WAY 2: 🤩🤩 USING Classname🤩🤩
 
 
 class StaticMethodCall1 {

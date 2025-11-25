@@ -72,9 +72,6 @@ let rehmanObj: pianist = {
  *
  * ! 1. Use ? before colons (:) to make the property optional while defining type defn.
  * ! 2. More than 1 property can be marked optional in a type defn defined for an object.
- * ! 3. Non mandatory properties are always checked for their existence in the object as per its type defn.
+ * ! 3. Mandatory properties are always checked for their existence in the object as per its type defn.
  * ! 4. If an optional property exists in an object, its type is always checked as per type defn.
- * ! 5. Making a property optional adds 'undefined' type for it. Null is not allowed (till not explicity defined in type defn) 
- * ! for optional as making optional adds 'undefined' (and not null).
- *
  *================================================================================================**/

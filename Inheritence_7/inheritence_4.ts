@@ -58,6 +58,10 @@ bahadurObj1.fpublic(); //OK
 
 //! Overriding Access Modifier in the Derived Class
 
+//! 😤😤 You cannot decrease the scope (visibility) of an access modifier when overriding a method in a child class in JavaScript 😤😤
+
+//* Example 1:
+
 export class Person {
   protected firstName: string;
   protected lastName: string;
@@ -92,7 +96,7 @@ class Employee extends Person {
   }
 
   //method overriding and changing modifier
-   printHello() {
+  public printHello() { //! private modifier here, will give error. Public and Protected works fine.
     console.log("Hello boy from Employee");
   }
 }
@@ -112,3 +116,18 @@ let p = new Person("Jon", "Snow");
 // console.log(p.firstName); //Property 'firstName' is protected and only accessible within class 'Person' and its subclasses.
 // console.log(p.lastName); //Property 'lastName' is protected and only accessible within class 'Person' and its subclasses.
 // p.printHello(); //Property 'printHello' is protected and only accessible within class 'Person' and its subclasses.
+
+//* Example 2:
+
+
+class Money {
+  public getChillar() {
+    console.log("2 rupess people....");
+  }
+}
+
+class Dollor extends Money {
+  getChillar() { //protected or private here, will give issues.
+    console.log("2 rupess people....");
+  }
+}

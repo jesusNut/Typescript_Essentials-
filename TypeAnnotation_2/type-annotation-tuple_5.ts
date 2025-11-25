@@ -45,7 +45,8 @@ console.log("🚀 ~ tupledrole:", tupledrole)
 let myRole : [number, string] = [404, 'Page not found'] ;
 
 //push - all below are allowed which will break the fixed nature of tuple.
-//Here only number and string can be pushed as only those two are defined while defining tuple.
+
+//!Here only number and string can be pushed as only those two are defined while defining tuple.
 
 myRole.push(200);
 myRole.push('OK');

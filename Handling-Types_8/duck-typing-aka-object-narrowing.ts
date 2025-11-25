@@ -66,7 +66,7 @@ let obj1 = {
   rich: false,
 };
 
-let printer = function (data: typeof obj1) {
+let printer = function (data: typeof  obj1) {
   console.log(data.fname);
   console.log(data.age);
   console.log(data.rich);

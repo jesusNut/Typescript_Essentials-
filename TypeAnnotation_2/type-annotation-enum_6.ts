@@ -60,15 +60,6 @@ console.log(ListOfGrocery.KITES); //41
 
 //-----------------------------------------------------------------------------
 
-//! CREATING ENUM TYPE FOR VARIBALES and accessing enum values
-
-let today: DaysOfWeek = DaysOfWeek.MONDAY;
-console.log(today); //0
-today = DaysOfWeek.SUNDAY; //allowed
-console.log(today); //6
-today = 2; //allowed to use directly number (only those present in Enum)
-console.log(today); //2
-
 //! concept of lookup and reverse lookup in numeric enums
 
 console.log(DaysOfWeek["MONDAY"]); //0 [Look-up]
@@ -76,7 +67,23 @@ console.log(DaysOfWeek["NOT-FOUND"]); //7 [Look-up]
 console.log(DaysOfWeek[0]); //'MONDAY'  [Reverse-lookup]
 console.log(DaysOfWeek[7]); //'NOT-FOUND'  [Reverse-lookup]
 
-//----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+
+//! CREATING ENUM TYPE FOR VARIABLES and accessing enum values
+
+let today: DaysOfWeek = DaysOfWeek.MONDAY;
+console.log(today); //0
+today = DaysOfWeek.SUNDAY; //allowed
+console.log(today); //6
+
+//😏 Allowed but illogical to use in real world :
+today = 2; //allowed to use directly number (only those present in Enum)
+console.log(today); //2
+
+//💀 Error in case of revrese look up as revrese look up will give string (and not Enum Type).
+//today = DaysOfWeek[0]; //Error- Type 'string' is not assignable to type 'DaysOfWeek'.
+
+//-----------------------------------------------------------------------------
 
 //* 2. String enums
 

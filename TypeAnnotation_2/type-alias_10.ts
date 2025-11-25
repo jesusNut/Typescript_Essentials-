@@ -77,7 +77,21 @@ let myPC: myObject = {
 //pc.perks = {}; //invalid
 myPC.perks = []; //valid
 
+//myPC.newprop = 22; // Error on adding a new property not present in type alias
+//Error message : Property 'newprop' does not exist on type 'myObject'.
+
 console.log("🚀 ~ pc:", myPC);
+
+/**================================================================================================
+ * ?    SUMMARY (Just like Interfaces with objects)
+ * ?-------------------------------------------------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ *
+ * ! 1. All the properties should be present in the object as per the Type Alias defined.
+ * ! 2. All the properties should have exact name & type as defined in Type Alias.
+ * ! 3. Cannot add a new property which is not already defined in Type Alias.
+ * ! 4. Order of proprties does not matter until all properties are defined
+ * !    as per the Type Alias with correct data types.
+ *================================================================================================**/
 
 //!-------------------example 4: define type alias for array of objects--------------------------------
 

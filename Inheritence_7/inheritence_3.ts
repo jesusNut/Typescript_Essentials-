@@ -4,6 +4,16 @@
  **   ☠️☠️ accessing base class methods & properties in child class ☠️☠️
  *==========================================================================**/
 
+ /**================================================================================================
+ * todo ********************* SUMMARY ABOUT ACCESSING BASE CLASS MEMEBRS *************************
+ * 
+ * todo 1.) super keyword used to access  static properties and methods on BASE CLASS PROTOTYPE.
+ * todo 2.) super() & super(args) is used for calling parent class constructors from child class.
+ * todo 3.) super CAN be used to access parent instance methods.
+ * !    4.) super cannot be used to access instance variables of parent class, in child class.
+ *   
+ *================================================================================================**/
+
 //! Concept 1 : Overriding method.
 
 export class Person {
@@ -135,7 +145,7 @@ class MallSecurity1 extends Security1 {
     //! accessing base class property using this:
     console.log(`${this.fname}------${this.age}`);
     //! using 'super.fname' will give undefined.
-    console.log(`${super.fname}`); //undefined
+    //console.log(`${super.fname}`); //undefined
   }
 }
 
@@ -147,7 +157,7 @@ mallsec1.greet();
 
 //! Concept 6: You can override a property, as long as the data types are compatible.
 
-//! WE CANNOT SIMPLY CALL VARIABLES/PROPERTIES OF BASE CLASS USING SUPER KEYWORD (LIKE METHODS).
+//! WE CANNOT SIMPLY CALL INSTANCE VARIABLES/PROPERTIES OF BASE CLASS USING SUPER KEYWORD (LIKE METHODS).
 
 export class Person3 {
   age: number = 55;
@@ -158,11 +168,11 @@ export class Person3 {
 
 class Employee3 extends Person3 {
   age: number = 99;
-  greet(): string {
+  // greet(): string {
 
-    //! using 'super.age' will give undefined.
-    return `I am ${this.age} years young in child and ${super.age} years old in Parent`;
-  }
+  //   //! using 'super.age' will give undefined.
+  //   return `I am ${this.age} years young in child and ${super.age} years old in Parent`;
+  // }
 }
 
 let emp3 = new Employee3();
@@ -176,11 +186,3 @@ console.log(emp3.greet());
 //? https://www.tektutorialshub.com/typescript/inheritance-in-typescript/
 
 
-/**================================================================================================
- * todo ********************* SUMMARY ABOUT ACCESSING BASE CLASS MEMEBRS *************************
- * 
- * todo 1.) ONLY USE SUPER WHEN REFERRING TO THE PARENT CLASS' IMPLEMENTATION OF A METHOD
- * 
- * todo 2.) ONLY USE 'this' WHEN REFERRING TO THE PARENT CLASS' PROPERTIES.
- *   
- *================================================================================================**/

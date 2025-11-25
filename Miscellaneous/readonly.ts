@@ -40,6 +40,21 @@ export let garbage: Iperson = {
 console.log(garbage.legs); //* OK
 //garbage.legs = 112; //! Error : Cannot assign to school because it is a read-only property.
 
+//===================================================================================================================
+
+//! 😋😋 Key Restriction of readonly 😋😋:
+
+// The readonly modifier enforces immutability for the property after the instance has been initialized. 
+// The initialization phase is considered to be either:
+
+// 1. At the point of declaration: readonly property: Type = initialValue;
+// 2. Within the constructor of the class: constructor(initialValue: Type) { this.property = initialValue; }
+
+// Once the object is created and the constructor has finished, the readonly properties of that instance cannot be reassigned from anywhere.
+// Even methods within the same class (other than the constructor) cannot reassign a readonly property after its initial assignment.
+
+//====================================================================================================================
+
 class EliteClub implements Iperson {
   fname: string;
   age: number;
@@ -54,7 +69,7 @@ class EliteClub implements Iperson {
 
 const rich1 = new EliteClub("Manish", 77, 2);
 console.log("The rich man has " + rich1.legs + " legs."); //*OK
-//rich1.legs = 4; //! Error : Cannot assign to school because it is a read-only property.
+//rich1.legs = 4; //! Error : Cannot assign to legs because it is a read-only property.
 
 //* 3. Usage in Types
 

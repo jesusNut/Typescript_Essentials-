@@ -23,8 +23,8 @@ let anyObj1: {};
 anyObj1 = {}; //allowed
 anyObj1 = { jug: "steel", mug: "plastic" }; //allowed
 //! 👻👻👻 issue with way -2
-//console.log(anyObj.jug); //error : Property 'jug' does not exist on type 'object'.
-//console.log(anyObj.mug); //error: Property 'mug' does not exist on type 'object'.
+//console.log(anyObj1.jug); //error : Property 'jug' does not exist on type 'object'.
+//console.log(anyObj1.mug); //error: Property 'mug' does not exist on type 'object'.
 console.log(anyObj1)
 
 //? https://bobbyhadz.com/blog/typescript-property-does-not-exist-on-type
@@ -92,6 +92,33 @@ pc = {
 //! BUT, order of properties does not matter.
 //? https://www.denhox.com/posts/be-mindful-of-typescripts-excess-property-checking/
 
+//! Deleting a required property
+
+let datas: {
+  fname: string;
+  experience: number;
+  isFunctional: boolean;
+  knowledge: {
+    primary: string;
+    secondary: string;
+  };
+};
+
+datas = {
+  fname: "Abhishek",
+  experience: 10,
+  isFunctional: false,
+  knowledge: {
+    primary: "Playwright",
+    secondary: "Jmeter",
+  },
+};
+
+
+//delete datas.fname; //Error : The operand of a 'delete' operator must be optional.
+
+//Error is coming because Deleting a required property would break the type contract.
+
 
 
 /**================================================================================================
@@ -101,7 +128,8 @@ pc = {
  * ! 1. All the properties should be present in the object as per the type defined.
  * ! 2. All the properties should have exact name & type as defined in type.
  * ! 3. Cannot add a new property which is not already defined in type BUT
- * !    update externally if the property already exists.
+ * !    can be updated externally if the property already exists.
  * ! 4. Order of proprties does not matter until all properties are defined 
  * !    as per the type with correct data types.
+ * ! 5. Cannot delete a required property (defined in type)extrenally using 'delete' keyword.
  *================================================================================================**/

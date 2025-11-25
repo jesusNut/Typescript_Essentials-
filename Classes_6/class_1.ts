@@ -74,8 +74,8 @@ oppoObject.getDetails("Ankush");
 
 //===================================================================================================================
 
-//! concept 1: It is a MANDATORY to declare variables if access modifiers
-//! are not provided explicitly in TS & {NOT LIKE JS}
+//! concept 1: It is MANDATORY to declare variables if access modifiers [public, private, protected, readonly]
+//! are not provided explicitly in constructor {NOT LIKE JS}
 
 class Mobile1 {
   constructor(screen: string, ram: number, facelock: boolean) {
@@ -86,8 +86,8 @@ class Mobile1 {
 
 //===================================================================================================================
 
-//! concept 2: It is NOT MANDATORY to declare variables if access modifiers
-//! are provided explicitly in TS & {NOT LIKE JS}
+//! concept 2: It is NOT MANDATORY to declare variables if access modifiers [public, private, protected, readonly]
+//! are provided explicitly in constructor.
 
 class Mobile2 {
   constructor(
@@ -111,18 +111,41 @@ class Mobile2 {
 
 //===================================================================================================================
 
-//! Concept 4: We can define functions in a class using arrow functions also.
+//! Concept 4: We can define functions in a class using 3 ways just liek in JS.
 
 class Sharp {
   constructor(public item: string) {
     this.item = item;
   }
 
-  //using arrow functions
+  //! 1. ES6 way:
 
-  sharpObjectCarried = (): string => {
+  // sharpObjectCarried  (): string {
+  //   return `Hi ...I am having ${this.item} in my bag...hahaha`;
+  // };
+
+  //! 2. using arrow functions
+
+  // sharpObjectCarried = (): string => {
+  //   return `Hi ...I am having ${this.item} in my bag...hahaha`;
+  // };
+
+  //! 3. Uinsg function keyword
+
+  sharpObjectCarried = function (): string {
     return `Hi ...I am having ${this.item} in my bag...hahaha`;
   };
+
+
+  //! In case of error as ''this' implicitly has type 'any' because it does not have a type annotation'
+  //? Make changes in tsconfig.json:
+  // {
+  //   "compilerOptions": {
+  //     "noImplicitThis": false   // turn off just this check
+  //   }
+  // }
+
+
 }
 
 const sharpObject1 = new Sharp('Scissor');

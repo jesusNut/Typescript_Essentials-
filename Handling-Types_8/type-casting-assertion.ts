@@ -38,7 +38,7 @@ let incorrectResponse = {
 //let's create a custom type guard to check if the response contains 2 defined properties or not.
 
 function isResponse(data: any): data is responseType {
-  return !! data && typeof data ==='object' && "fname" in (data as responseType) && "price" in (data as responseType);
+  return !! data && typeof data ==='object' && "fname" in (data as any) && "price" in (data as any);
 }
 
 //* 🤭🤭🤭 WHAT IS !! operator?? 🤭🤭🤭

@@ -43,12 +43,27 @@ console.log("🚀 ~ hasMoney:", hasMoney);
 
 //* void
 
+//Example 1:
+
 //used as return type of a method below
 function grettings(): void {
   console.log("Hi Sexy...you gonnna die one day...");
 }
 
 grettings();
+
+//Example 2:(below code will give issue)
+
+// let print = function (param1: string, param2: string): void {
+//   let newdata: string = param1 + param2;
+//   return newdata;
+// }; error:Type 'string' is not assignable to type 'void'
+
+// You declared the return type as void, which means:
+// => “This function must NOT return a value.”
+// => TypeScript expects no return value.
+// => But inside the function we tried to returna string. Hence error.
+
 
 /**======================================================
  *?    https://github.com/Microsoft/TypeScript/pull/7140

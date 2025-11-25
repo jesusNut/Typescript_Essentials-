@@ -4,11 +4,13 @@
 
 //? https://www.tektutorialshub.com/typescript/inheritance-in-typescript/
 
-//! 🤓 Concept-1: if a child class doesn’t have its own constructor, we can use
-//!    the constructor of the parent class for child class.
+/**========================================================================
+ **    ☠️☠️ Concept of  Implicit Constructor Inheritance in JS/TS ☠️☠️
+ *========================================================================**/
 
-//! 🤓 If the child class does not need a constructor, then you can omit to call super method.
-//!    The compiler will not flag this as an error.
+//! Concept 1:  🎃🎃🎃 In JS and TS, if a subclass doesn't define its own constructor,
+//! it inherits the superclass's constructor automatically. 🎃🎃🎃
+
 
 class A1 {
   a: string;
@@ -27,7 +29,7 @@ class B1 extends A1 {}
 
 //! Typescript automatically creates a constructor method with a super call in the generated JavaScript.
 
-const boneObject = new B1("a", "b");
+const boneObject = new B1("a", "b"); //* Here B1's constructor will ask for 2 args as it inherits constr. of A1 automatically.
 console.log(boneObject.printab()); //a
 
 //* so write now my derived class in equivalent to :

@@ -23,7 +23,7 @@
 // https://www.scaler.com/topics/typescript/modules-in-typescript/
 // https://www.typescripttutorial.net/typescript-tutorial/typescript-modules/
 
-//! TypeScript shares the same module concept with the ES6 module in JS.
+//! TypeScript shares the same module concept as the ES6 module in JS.
 
 //* Only difference is that with JS we need to use file extension in relative path with import statement WHILE
 //* its not required in TS.

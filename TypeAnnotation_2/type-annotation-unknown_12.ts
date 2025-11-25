@@ -5,8 +5,14 @@
  *===============================================**/
 
  //* unknown type is a safer alternative to 'any' type 
- //* because unknown type enforces type checking and type-safety ALWAYS.
  //! Always recommended to use 'unknown' instead of 'any'.
+
+// 👢👢👢 When a variable is typed as unknown, TypeScript is telling you:
+// “You can assign anything to this variable,but you cannot use it until you prove its type.”
+
+//! Every time you want to use an unknown value, you must first apply a type guard.
+
+
 
  //! problems with any type **********************************************************************
 
@@ -22,7 +28,7 @@
  let arrayVar:number[] = master; //possible - no type safety
  let objectVar:{} = master; //possible - no type safety
 
-//! usage of Unknown type************************************************************************
+//! usage of Unknown typ 1************************************************************************
 
 let umaster:unknown = 'abc';
 
@@ -36,6 +42,19 @@ if(typeof umaster ==='string'){
 
     ustringVar = umaster; //! 😆 possible
 
+}
+
+//! usage of Unknown type 2 ************************************************************************
+
+let jemini: unknown = "abc";
+
+
+function upperCased(a: string) {
+  return a.toUpperCase();
+}
+
+if (typeof jemini === "string") {
+  console.log(upperCased(jemini));
 }
 
 /**============================================================
